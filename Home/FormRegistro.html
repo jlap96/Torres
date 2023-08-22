@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../librerias/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Registro</title>
+</head>
+<body>
+
+         <!-- MENU PRINCIPAL -->
+
+            <div class="menu-principal">
+                <div class="barra-menu">
+                    <nav class="enlaces">
+                        <ul>
+                            <li><a href="Index.html">Inicio</a></li>
+                            <li><a href="FormRegistro.html">Registrarse</a></li>
+                            <li><a href="InicioSesion.html">Iniciar sesión</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+    
+             <!-- FORMULARIO REGISTRO -->
+    <div class="formRegistro">
+        <form action="" method="post" id="form" class="form">
+          <h1 class="title">Registrarse</h1>
+    
+          <div class="inputContainer">
+            <input type="text" name="idUsuario" id="idUsuario" class="input" placeholder="">
+            <label for="" class="label">ID Usuario</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" name="nombre" id="nombre" class="input" placeholder="">
+            <label for="" class="label">Nombre</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" name="apellidoPa" id="apellidoPa" class="input" placeholder="">
+            <label for="" class="label">Apellido paterno</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" name="apellidoMa" id="apellidoMa" class="input" placeholder="">
+            <label for="" class="label">Apellido materno</label>
+          </div>
+
+          <div class="inputContainer">
+            <input type="text" name="departamento" id="departamento" class="input" placeholder="">
+            <label for="" class="label">Departamento</label>
+          </div>
+
+          <div class="inputContainer">
+            <input type="password" name="contrasena" id="contrasena" class="input" placeholder="">
+            <label for="" class="label">Contraseña</label>
+          </div>
+
+          <div class="inputContainer">
+            <input type="password" id="contrasenaConfirm" class="input" placeholder="">
+            <label for="" class="label">Confirmar Contraseña</label>
+          </div>
+
+                    <!-- ALERTAS -->
+
+    <div class="alertas">
+      <div id="alertError" class="">
+          <span class="icono-alert fas fa-exclamation-circle"></span>
+          <span class="msg">Error: Todos los campos son requeridos</span>
+      </div>
+
+      <div id="alertContrasena" class="">
+        <span class="icono-alert fas fa-exclamation-circle"></span>
+        <span class="msg">Error: La contraseña debe incluir: 8 carácteres especiales en combinación de letras y números y por lo menos un carácter especial</span>
+    </div>
+
+    <div id="alertCoincidencia" class="">
+      <span class="icono-alert fas fa-exclamation-circle"></span>
+      <span class="msg">Error: Las contraseñas deben coincidir</span>
+  </div>
+
+      <div id="alertSuccess" class="">
+          <span class="icono-alert fas fa-check-circle"></span>
+          <span class="msg">¡Datos correctos. Registro exitoso!</span>
+      </div>
+      <!-- BOTON DE ENVIO -->
+      </div>
+          <input type="submit" name="insertar" class="submitBtn" value="Registrarse">
+        </form>
+      </div>
+
+
+
+       <!-- SECCION FOOTER -->
+     <footer>
+        <div class="licencia">
+            <p style="margin-top: 50px;">Torres Tlalpan (C) 2023 ALL RIGHTS RESERVED</p>
+        </div>
+
+        <div class="contacto">
+            <p><br> CONTACTANOS: <br> <br>
+
+            info@torrestlapan.com <br>
+            222 569 8596 <br>
+            Urbanizada Los Lopez 310 <br>
+            Carretera nacional</p>
+        </div>
+
+        <div class="redes sociales">
+            <a href=""><span class="fab fa-facebook"></span></a>
+            <a href=""><span class="fab fa-instagram"></span></a>
+            <a href=""><span class="fab fa-twitter"></span></a>
+        </div>
+     </footer>
+
+     <script src="app.js"></script> 
+</body>
+</html>
