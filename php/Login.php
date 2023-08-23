@@ -3,7 +3,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require ("Database.php");
-echo "hello";
 
 class Login extends Database
     {
@@ -17,28 +16,31 @@ class Login extends Database
 
             $usuario = $_POST['usuario'];
             $password = $_POST['contrasena'];
-            //echo ("SELECT * FROM usuarios where idUsuario = $usuario and Password = $password"); die;
             
-            $query = $this->db_conection->query("SELECT * FROM usuarios where idUsuario = '$usuario' and Password = '$password'");
-            $data = $query->rowCount(PDO::FETCH_ASSOC);
-            echo($data);
-              // set the resulting array to associative
-            // iterate over rows
-            foreach($data as $row) { 
-                // iterate over values in each row
-                foreach($row as $v) { 
-                    echo $v, " ";
-                }
-                echo "<br>";
-            }
-            die;
-            if( $data->num_rows > 0 ) return $data->fetch_all(MYSQLI_ASSOC);
+            $query = $this->db_conection->query("SELECT * FROM usuarios where idUsuario = '$usuario' and Password = '$password' LIMIT 1");
 
-            return false;
+            $contar = $query->rowCount(PDO::FETCH_ASSOC);
+
+            if($contar === 1){
+                echo "algo";
+                session_start();
+                $data = $query->fetchAll(PDO::FETCH_ASSOC);
+                if($data[0]['TipoUsuario'] === "AD"){
+
+                    $_SESSION["TipoUsuario"] = "AD";
+                    header('Location: ../UsuarioAd/Inicio.php');
+                    return;
+                }else{
+                    $_SESSION["TipoUsuario"] = "CO";
+                    header('Location: ../UsuarioCo/Inicio.php');
+                    return;
+                }
+            }
+
+            header('Location: ../Home/InicioSesion.html');
+
         }
     }
 
 $acceso = new Login();
 $data = $acceso->obtenerusuarios();
-
-var_dump($data);

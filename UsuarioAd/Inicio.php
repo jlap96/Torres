@@ -1,3 +1,11 @@
+<?php
+session_start();
+echo $_SESSION["TipoUsuario"]."tetas";
+if ($_SESSION["TipoUsuario"] !== "AD") {
+        header('Location: ../Home/InicioSesion.html');
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
