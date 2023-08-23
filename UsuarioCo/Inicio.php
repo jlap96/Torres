@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION["TipoUsuario"] !== "OD") {
+if ($_SESSION["TipoUsuario"] !== "CO") {
         header('Location: ../Home/InicioSesion.html');
     } 
 ?>
