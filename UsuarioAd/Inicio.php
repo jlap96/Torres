@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION["TipoUsuario"] !== "AD") {
+        header('Location: ../Home/InicioSesion.html');
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

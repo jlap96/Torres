@@ -25,10 +25,11 @@
     <!-- SECCION INICIO DE SESIÓN -->
 
     <section class="form-login">
-        <form method="POST" action="login.php">
+        <form method="POST" action="../php/Login.php">
         <h5>Iniciar sesión</h5>      
-            <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-            <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+            <input class="controls" type="text" name="usuario" placeholder="Usuario">
+            <input class="controls" type="password" name="contrasena" placeholder="Contraseña">
+            <input type="hidden" name="form" >
             <input class="button" type="submit" value="Ingresar">
         </form>
         
