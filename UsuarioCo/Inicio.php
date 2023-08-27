@@ -21,7 +21,7 @@ if ($_SESSION["TipoUsuario"] !== "CO") {
                 <nav class="enlaces">
                     <ul>
                         <li><a href="Inicio.php">Inicio</a></li>
-                        <li><a href="">Consultar pagos</a></li>
+                        <li><a href="VerPagos.html">Consultar pagos</a></li>
                         <li><a href="../Home/Index.html">Salir</a></li>
                     </ul>
                </nav>

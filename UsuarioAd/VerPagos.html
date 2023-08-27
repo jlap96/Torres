@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="estilosAd.css">
     <title>Pagos</title>
 </head>
-<body>
+<body onload="obtenerDatos()">
          <!-- MENU PRINCIPAL -->
 
          <div class="menu-principal">
             <div class="barra-menu">
                 <nav class="enlaces">
                     <ul>
-                        <li><a href="Inicio.html">Inicio</a></li>
-                        <li><a href="">Consultar pagos</a></li>
+                        <li><a href="Inicio.php">Inicio</a></li>
+                        <li><a href="VerPagos.html">Consultar pagos</a></li>
                         <li><a href="">Registrar pagos</a></li>
                         <li><a href="../Home/Index.html">Salir</a></li>
                     </ul>
@@ -33,9 +33,15 @@
                     <th>MONTO</th> 
                     <th>FECHA</th>
                     <th></th>
-                    <th></th>            
-                </tr>
+                    <th></th>           
+                </tr> 
             </thead>
+            <tbody id="cuerpo">
+            </tbody>
         </table>
+
+        <script src="pagos.js"></script> 
 </body>
 </html>
+
+

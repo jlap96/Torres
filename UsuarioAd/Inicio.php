@@ -21,8 +21,8 @@ if ($_SESSION["TipoUsuario"] !== "AD") {
         <div class="barra-menu">
             <nav class="enlaces">
                 <ul>
-                    <li><a href="Inicio.html">Inicio</a></li>
-                    <li><a href="">Consultar pagos</a></li>
+                    <li><a href="Inicio.php">Inicio</a></li>
+                    <li><a href="VerPagos.html">Consultar pagos</a></li>
                     <li><a href="">Registrar pagos</a></li>
                     <li><a href="../Home/Index.html">Salir</a></li>
                 </ul>

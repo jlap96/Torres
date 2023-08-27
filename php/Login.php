@@ -19,11 +19,11 @@ class Login extends Database
             
             $query = $this->db_conection->query("SELECT * FROM usuarios where idUsuario = '$usuario' and Password = '$password' LIMIT 1");
 
-            $contar = $query->rowCount(PDO::FETCH_ASSOC);
+            $contar = $query->rowCount();
 
             if($contar === 1){
                 session_start();
-                $data = $query->fetchAll(PDO::FETCH_ASSOC);
+                $data = $query->fetchAll();
                 if($data[0]['TipoUsuario'] === "AD"){
 
                     $_SESSION["TipoUsuario"] = "AD";
