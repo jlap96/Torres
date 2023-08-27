@@ -22,7 +22,6 @@ class Login extends Database
             $contar = $query->rowCount(PDO::FETCH_ASSOC);
 
             if($contar === 1){
-                echo "algo";
                 session_start();
                 $data = $query->fetchAll(PDO::FETCH_ASSOC);
                 if($data[0]['TipoUsuario'] === "AD"){
