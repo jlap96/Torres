@@ -24,7 +24,7 @@ if ($_SESSION["TipoUsuario"] !== "AD") {
                     <li><a href="Inicio.php">Inicio</a></li>
                     <li><a href="VerPagos.html">Consultar pagos</a></li>
                     <li><a href="">Registrar pagos</a></li>
-                    <li><a href="../Home/Index.html">Salir</a></li>
+                    <li><a href="../php//CerrarSesion.php">Salir</a></li>
                 </ul>
            </nav>
         </div>
