@@ -47,8 +47,28 @@ class Pagos extends Database
                 return printf(json_encode(array("code" => "404", "data" => [] )));
             }
             
-
         }
+
+
+        public function actualizarPayment(){
+            
+            $id = $_GET['id'];
+
+            $concepto = $_POST['Concepto'];
+            $monto = $_POST['Monto']; 
+            $query = $this->db_conection->query("UPDATE pagos SET Concepto = '$concepto', Monto = '$monto' where FolioPago = '$id'");
+
+            $data = $query->fetch(PDO::FETCH_ASSOC);
+            $contar = $query->rowCount(PDO::FETCH_ASSOC);
+
+            if($contar > 0){
+                return printf(json_encode(array("code" => "201", "data" => "Actualizado correctamente" )));
+            }else{
+                return printf(json_encode(array("code" => "404", "data" => [] )));
+            }
+            
+        }
+
     }
 
 $acceso = new Pagos();
@@ -61,9 +81,13 @@ switch ($_GET['metodo']) {
     case 'obtenerPorId':
         $data = $acceso->obtenerPagoPorId();
         break;
+
+    case 'actualizar':
+        $data = $acceso->actualizarPayment();
+        break;
     
     default:
-        # code...
+        return printf(json_encode(array("code" => "404", "message" => "Peticion no valida" )));
         break;
 }
 
