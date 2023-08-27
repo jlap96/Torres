@@ -2,9 +2,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require ("Database.php");
+require ("DataBase.php");
+require_once "DataBase.php";
 
-class Pagos extends Database
+
+class Pagos extends DataBase
     {
         public function StudentPayment(){
 
@@ -19,7 +21,9 @@ class Pagos extends Database
 
             $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            $contar = $query->rowCount(PDO::FETCH_ASSOC);
+            $contar = $query->rowCount();
+
+            return printf(json_encode(array("code" => "201", "data" => $data )));
 
             if($contar > 0){
                 return printf(json_encode(array("code" => "201", "data" => $data )));
@@ -39,7 +43,7 @@ class Pagos extends Database
 
             $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            $contar = $query->rowCount(PDO::FETCH_ASSOC);
+            $contar = $query->rowCount();
 
             if($contar > 0){
                 return printf(json_encode(array("code" => "201", "data" => $data )));
@@ -59,7 +63,7 @@ class Pagos extends Database
             $query = $this->db_conection->query("UPDATE pagos SET Concepto = '$concepto', Monto = '$monto' where FolioPago = '$id'");
 
             $data = $query->fetch(PDO::FETCH_ASSOC);
-            $contar = $query->rowCount(PDO::FETCH_ASSOC);
+            $contar = $query->rowCount();
 
             if($contar > 0){
                 return printf(json_encode(array("code" => "201", "data" => "Actualizado correctamente" )));

@@ -1,10 +1,10 @@
 <?php
 
-    class Database{   
+    class DataBase{   
 
-        protected $db_conection;
+        protected object $db_conection;
 
-        public function DataBase(){
+        public function __construct(){
             try {
                 $servidor = 'localhost';
                 $usuario = 'root';
